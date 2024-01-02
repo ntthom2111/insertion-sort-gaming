@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lý thuyết</title>
+   
+
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+    <link rel="stylesheet" href="info.css">
+    
+   <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon">
+
+    </head>
+<body >
+<div>
+ 
+ <div id="banner">
+       <img src="/assets/banner.gif"   width="1460" alt="banner">
+
+ </div>
+
+
+<div id="content">
+
+<h2>1. GIỚI THIỆU</h2>
+<p>Thuật toán sắp xếp  là một thuật toán sắp xếp các phần tử của một danh sách (hoặc một mảng) theo thứ tự (tăng hoặc giảm). Và để dễ dàng cho việc nghiên cứu và học tập thì người ta thường gán các phần tử được sắp xếp là các chữ số.</p>
+<p>Sắp xếp chèn (insertion sort) là thuật toán sắp xếp cho một dãy đã có thứ tự. Ta chia dãy thành dãy đã sắp xếp và dãy chưa sắp xếp. Chèn thêm một phần tử c từ dãy chưa sắp xếp vào vị trí thích hợp của dãy số đã sắp xếp sao cho dãy số vẫn là dãy sắp xếp có thứ tự. Sau đó ta lặp lại các thao tác cho đến khi dãy chưa sắp xếp không còn phần tử nào nữa.</p>
+<p>Thuật toán sắp xếp chèn sẽ lần lượt chọn giá trị của các phần tử trong mảng (từ giá trị thứ 2 đến giá trị cuối cùng) và so sánh với với các giá trị phía trước vị trí của nó</p>
+<p>Nếu tìm được vị trí phù hợp, phần tử ấy sẽ được chèn vào vị trí thích hợp giữa các giá trị trước nhưng vẫn đảm bảo mảng được sắp xếp theo thứ tự.</p>
+
+<p>Trong cuộc sống thực có thể bạn sẽ sử dụng thuật toán này mà không hề biết mình đang dùng. Bởi vì Insertion Sort là một trong những cách sắp xếp tự nhiên nhất.</p>
+<p>Hãy lấy một ví dụ:</p>
+
+<ul>
+<li>Giả sử bây giờ bạn có 1 tập bài với 10 thẻ bài trong tay, chúng đã được sắp xếp theo thứ tự tăng dần.</li>
+<li>Nếu đưa cho bạn thêm 1 thẻ bài khác, vào yêu cầu chèn (insert) thẻ bài này vào đúng vị trí trong cỗ bài sao cho các thẻ bài vẫn được sắp xếp theo thứ tự tăng dần.</li>
+</ul>
+
+<p>Bạn sẽ làm gì?</p>
+<p>Theo cách nghĩ tự nhiên nhất, bạn sẽ duyệt lần lượt các thẻ bài trong cỗ bài, bắt đầu duyệt từ vị trí đầu tiên hoặc duyệt từ cuối lên, so sánh giá trị của thẻ bài mới với giá trị của các thẻ bài trong cỗ bài.</p>
+<p>Khi bạn tìm đúng vị trí, bạn sẽ chèn (insert) thẻ bài mới vào đó.</p>
+<p>Tương tự, nếu tiếp tục đưa cho bạn thêm các lá bài mới, bạn sẽ lặp lại quy trình đó, chèn thẻ mới, đồng thời vẫn đảm bảo thứ tự của các thẻ bài.</p>
+<p>Đây chính là cơ chế hoạt động của Insertion Sort.</p>
+
+<h2>2.Ý TƯỞNG THUẬT TOÁN SẮP XẾP CHÈN -  INSERTION SORT</h2>
+
+<p>Thuật toán Insertion Sort (Sắp xếp chèn) là một thuật toán sắp xếp đơn giản.</p>
+<p>Thuật toán sắp xếp chèn thực hiện sắp xếp dãy số theo cách duyệt từng phần tử và chèn từng phần tử đó vào đúng vị trí trong mảng con(dãy số từ đầu đến phần tử phía trước nó) đã sắp xếp sao cho dãy số trong mảng sắp đã xếp đó vẫn đảm bảo tính chất của một dãy số tăng dần.:</p>
+<ul>
+<li>Khởi tạo mảng với dãy con đã sắp xếp có k = 1 phần tử(phần tử đầu tiên, phần tử có chỉ số 0) </li>
+<li>Duyệt từng phần tử từ phần tử thứ 2, tại mỗi lần duyệt phần tử ở chỉ số i thì đặt phần tử đó vào một vị trí nào đó trong đoạn từ [0…i] sao cho dãy số từ [0…i] vẫn đảm bảo tính chất dãy số tăng dần. Sau mỗi lần duyệt, số phần tử đã được sắp xếp k trong mảng tăng thêm 1 phần tử.</li>
+<li>Lặp cho tới khi duyệt hết tất cả các phần tử của mảng.</li>
+</ul>
+
+<img src="/assets/vd.gif"  width="720" alt="vd">
+<h6>Mô phỏng về thuật toán sắp xếp chèn Insertion Sort </h6>
+
+
+
+
+
+
+<h2>3. VÍ DỤ VỀ SẮP XẾP CHÈN - INSERTION SORT</h2>
+<p>Tưởng tượng rằng bạn đang đóng vai trò là người chơi trong một trò chơi với các lá bài có giá trị từ 1 đến 10: Mỗi khi bạn bốc một quân bài thì bạn cần sắp xếp chúng trên tay theo thứ tự tăng dần từ trái qua phải. Hãy cùng phân tích quá trình sắp xếp của bạn như sau:</p>
+<p>Xét tại thời điểm bạn bắt đầu bốc quân bài đầu tiên: bạn chỉ có một quân bài và đương nhiên nó đã là thứ tự tăng dần sẵn. Tiếp theo lá bài thứ hai, bạn cần so sánh giá trị của nó với lá bài thứ nhất rồi chèn nó vào vị trí cụ thể (bên trái hoặc bên phải lá bài thứ nhất). Đến lá bài thứ ba, đương nhiên chúng ta sẽ cần so sánh nó với giá trị của hai lá bài trước kia rồi mới thực hiện chèn nó vào đúng vị trí của nó (Có thể ở vị trí đầu tiên, ở giữa hai lá bài trước, hoặc ở cuối cùng), ...</p>
+<p>Như vậy, tại thời điểm bất kì, bạn luôn có một nhóm lá bài đã được thực hiện sắp xếp đúng theo thứ tự tăng dần từ trước, sau đó bạn có một lá bài mới và cần so sánh giá trị của nó với giá trị các lá bài cũ rồi thực hiện thao tác chèn lá bài mới vào vị trí đúng của nó trong dãy. Việc thực hiện so sánh giá trị có hai cách:</p>
+
+<ul>
+<li>Thực hiện so sánh từ trái sang phải (thứ tự các lá bài đang tăng dần), đến khi gặp lá bài có giá trị lớn hơn lá bài mới chúng ta sẽ dừng lại và chèn lá bài mới vào vị trí bên trái của lá bài có giá trị lớn hơn nó.</li>
+<li>Thực hiện so sánh từ phải sang trái (thứ tự các lá bài đang giảm dần), đến khi gặp lá bài có giá trị nhỏ hơn lá bài mới chúng ta sẽ dừng lại và chèn lá bài mới vào vị trí bên phải của lá bài có giá trị nhỏ hơn nó.</li>
+</ul>
+<iframe width="1135" height="626" src="https://www.youtube.com/embed/IWT-Uoz_Sb8" title="Insertion Sort Algorithm | Thuật toán sắp xếp chèn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<h6>Video hướng dẫn chi tiết </h6>
+<p>Thật bất ngờ phải không, chính trong cuộc sống hằng ngày thì rất nhiều việc chúng ta thực hiện chính là thao tác của thuật toán Insertion Sort - sắp xếp chèn. Để hiểu rõ hơn về thuật toán này, chúng ta có thể xem xét với các con số cụ thể. Giả sử chúng ta đã biết trước các quân bài bạn sẽ bốc được là dãy 4, 3, 1, 5, 7, 9, 6, 2, kí hiệu màu xanh là các quân bài đã sắp xếp xong, màu cam chỉ các quân bài bạn vừa bốc được và cần chèn vào các lá bài trước. Chúng ta có sơ đồ cơ bản về thuật toán trên như sau:</p>
+<img src="/assets/vd.png"  width="720" alt="vd">
+
+
+<p>Chúc em học tốt ^.^</p>
+
+    
+
+
+  </div>
+
+</div>
+
+
+
+    <a href="#" class="back-button">
+                    <img src="../assets/main.png" alt="Back">
+                </a>
+    <div class="learn">
+        <div id="sort-view">
+            <ul></ul>
+        </div>
+        
+    <script>
+        document.querySelector(".back-button").addEventListener("click", function() {
+      window.history.back();
+    });
+     </script>
+
+
+    </section>
+
+
+   
+</body>
+
+</html>
+
+
+
+

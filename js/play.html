@@ -1,0 +1,257 @@
+<!DOCTYPE HTML>
+<html lang="en-gb">
+
+<head>
+<link rel="stylesheet" href="play.css">
+  <title>Trò chơi xếp sách</title>
+  
+  <script>
+    <!--
+    var bar;
+    var current;
+    var pen = 2;
+    var colour = new Array("#777777", "#37143F");
+    var yes = new Array("Vâng", "Quá hay", "Đúng rồi", "Nước đi chuẩn đấy");
+    var no = new Array("Rất tiếc", "Ôi không", "Thật không may");
+    var choice_text = new Array();
+    choice_text[false] = no;
+    choice_text[true] = yes;
+    var game_over, penalty, start_time, shift;
+
+    function time_now() {
+      var d = new Date();
+      return d.getTime();
+    }
+
+var bookData = [
+  { number: 100, imagePath: "../assets/1.png"},
+  { number: 101, imagePath: "../assets/2.png" },
+  { number: 102, imagePath: "../assets/3.png" },
+  { number: 105, imagePath: "../assets/4.png" },
+  { number: 110, imagePath: "../assets/5.png" },
+  { number: 114, imagePath: "../assets/6.png" },
+  { number: 115, imagePath: "../assets/7.png"},
+  { number: 120, imagePath: "../assets/8.png" },
+  { number: 130, imagePath: "../assets/9.png"},
+  { number: 135, imagePath: "../assets/10.png" }
+];
+
+// Hàm để tạo hoán vị ngẫu nhiên của mảng
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+// Thay đổi hàm init
+function init() {
+  shuffleArray(bookData);
+  var i;
+  bar = document.getElementsByClassName("bar");
+  for (i = 0; i < 10; i++) {
+    bar[i].innerHTML = bookData[i].number;
+    bar[i].style.left = i * 10 + "%";
+    bar[i].style.height = "96%"; // Đặt chiều cao của thanh bar là 100%
+    bar[i].style.backgroundColor = colour[0];
+    bar[i].style.backgroundImage = "url('" + bookData[i].imagePath + "')";
+    bar[i].classList.add("bar-with-image");
+     // Điều chỉnh kích thước chữ
+  }
+
+  current = 0;
+  bar[0].style.backgroundColor = colour[1];
+  document.onkeydown = key_pressed;
+  game_over = false;
+  penalty = 0;
+  shift = 0;
+  start_time = time_now();
+  document.getElementById("commentary").innerHTML = "Bạn có thể nhấn <em>L</em> hoặc <em>S</em> trên bàn phím hoặc dùng các nút bấm để thể hiện sự lựa chọn.";
+}
+
+
+ function left(msg = true) {
+  if (!game_over) {
+    if (current - shift > 0 && bookData[current - shift].number < bookData[current - shift - 1].number) {
+      document.getElementById("commentary").innerHTML = choice_text[msg][Math.floor(Math.random() * choice_text[msg].length)] + " - " + bookData[current - shift].number + " cần được di chuyển về bên trái.";
+      var tempNumber = bookData[current - shift].number;
+      var tempImage = bookData[current - shift].imagePath;
+      bookData[current - shift].number = bookData[current - shift - 1].number;
+      bookData[current - shift].imagePath = bookData[current - shift - 1].imagePath;
+      bookData[current - shift - 1].number = tempNumber;
+      bookData[current - shift - 1].imagePath = tempImage;
+
+      bar[current - shift].innerHTML = bookData[current - shift].number;
+      bar[current - shift].style.backgroundImage = "url('" + bookData[current - shift].imagePath + "')";
+      bar[current - shift - 1].innerHTML = tempNumber;
+      bar[current - shift - 1].style.backgroundImage = "url('" + tempImage + "')";
+
+      bar[current - shift].style.backgroundColor = colour[0];
+      bar[current - shift - 1].style.backgroundColor = colour[1];
+      shift++;
+    } else {
+      if (current == bar.length - 1 && msg) {
+        penalty += pen;
+        end_game(false);
+      } else {
+        if (current != bar.length - 1) {
+          penalty += pen;
+        }
+        stick(false);
+      }
+    }
+  }
+}
+
+function stick(msg = true) {
+   
+  if (!game_over) {
+    if ((current - shift == 0 || bookData[current - shift].number > bookData[current - shift - 1].number) && current < bar.length - 1) {
+      document.getElementById("commentary").innerHTML = choice_text[msg][Math.floor(Math.random() * choice_text[msg].length)] + " - " + bookData[current - shift].number + " đã nằm ở đúng vị trí.";
+      if (current < bar.length - 1) {
+        bar[current - shift].style.backgroundColor = colour[0];
+        current++;
+        bar[current].style.backgroundColor = colour[1];
+        shift = 0;
+      } else {
+        penalty += pen;
+        shift++;
+        left(false);
+      }
+    } else {
+      if (current == bar.length - 1 && !msg) {
+        end_game(true);
+      } else {
+        if (current - shift < bar.length) {
+          penalty += pen;
+        }
+        left(false);
+      }
+    }
+  }
+}
+
+
+    function end_game(correct) {
+      var time_taken = Math.round((time_now() - start_time) / 1000);
+      var prefix;
+      if (correct) {
+        prefix = "Đúng rồi";
+        penalty -= 2;
+      } else {
+        prefix = "Rất tiếc";
+      }
+      game_over = true;
+      var text = prefix + " - giá trị cuối cùng đã nằm ở đúng vị trí.  Các cuốn sách đã được sắp xếp thành công trong vòng " + time_taken + " giây."
+      if (penalty > 0) {
+        text += " Có " + penalty + " giây bị phạt cho những lựa chọn sai, tổng cộng là " + (time_taken + penalty) + " giây.";
+      }
+      text += "<br><input type=button value='Chơi lại' onclick='init()' style='margin-top: 5px'>"
+      document.getElementById("commentary").innerHTML = text;
+    }
+
+    function key_pressed(event) {
+      var ev = event || window.event;
+      if (ev.key == "l" || ev.key == "L") {
+        left();
+      }
+      if (ev.key == "s" || ev.key == "S") {
+        stick();
+      }
+    }
+    //-->
+  </script>
+</head>
+
+<body onload="init()">
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Computing and ICT in a Nutshell",
+      "url": "https://www.advanced-ict.info",
+      "logo": "https://www.advanced-ict.info/graphics/logo_small.png",
+      "brand": "Computing and ICT in a Nutshell",
+      "isAccessibleForFree": true,
+      "founder": "Andrew Virnuls",
+      "foundingDate": "2001-11-07",
+      "sameAs": [
+        "https://www.facebook.com/ComputingNutshell",
+        "https://twitter.com/advanced_ict",
+        "https://www.youtube.com/@advanced_ict",
+        "https://www.linkedin.com/company/computingnutshell",
+        "https://replit.com/@virnuls",
+        "https://scratch.mit.edu/users/virnuls/"
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "Computing and ICT in a Nutshell",
+      "alternateName": "Computing in a Nutshell",
+      "url": "https://www.advanced-ict.info/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.advanced-ict.info/home/search.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+  <nav>
+
+  </nav>
+
+  <main>
+    <header>
+      <h1>Trò chơi xếp sách - Sử dụng thuật toán sắp xếp chèn</h1>
+    </header>
+    <p>Quyển sách được đánh dấu nên giữ nguyên vị trí hay được di chuyển qua bên trái? Bạn sẽ được tính thời gian để xem mất bao lâu để hoàn thành việc sắp xếp và sẽ bị phạt 2 giây cho mỗi bước chọn
+      sai.
+    </p>
+    <div id="container">
+      <div id="bars">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        
+      </div>
+      <div id="controls">
+        <p>Bạn muốn thực hiện hành động gì với cuốn sách được chọn? <br><input type="button" value="Qua trái" onclick="left()"> <input type="button"
+            value="Đứng yên" onclick="stick()"></p>
+        <p id="commentary"></p>
+      </div>
+    </div>
+  </main>
+
+
+  <a href="#" class="back-button">
+                    <img src="../assets/main.png" alt="Back">
+                </a>
+    <div class="learn">
+        <div id="sort-view">
+            <ul></ul>
+        </div>
+        
+    <script>
+        document.querySelector(".back-button").addEventListener("click", function() {
+      window.history.back();
+    });
+     </script>
+
+
+    </section>
+    
+
+</body>
+
+</html>
