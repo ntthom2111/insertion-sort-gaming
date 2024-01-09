@@ -1,0 +1,105 @@
+#topbar {
+    background-color: rgb(0, 0, 0);
+    font-family: "PT Sans", sans-serif;
+    font-size: 13px;
+    height: 40px;
+
+    padding-left: 40px;
+    padding-right: 40px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    justify-content: flex-start;
+  }
+
+  #topbar a:hover {
+    text-decoration: none;
+  }
+
+  #account-dropdown-btn {
+    color: #198754;
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    margin-left: 0.5rem;
+
+    border: 2px solid;
+    border-radius: 0.25rem;
+    height: 24px;
+    line-height: 1.5;
+  }
+
+  #account-dropdown-btn:hover {
+    color: #0a58ca !important;
+    border-color: #198754;
+    text-decoration: none;
+  }
+
+  #login-button {
+    color: #198754;
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    margin-left: 0.5rem;
+
+    border: 2px solid;
+    border-radius: 0.25rem;
+
+    height: 24px;
+    line-height: 1.5;
+  }
+
+  #login-button a:hover {
+    color: #0a58ca !important;
+    text-decoration: none;
+  }
+
+  #account-dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 1000;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0;
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    list-style: none;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 0.25rem;
+    top: 45px;
+    right: 40px;
+    line-height: 1.5;
+  }
+
+  .account-dropdown-item {
+    display: block;
+    width: auto;
+    padding: 0.25rem 1rem;
+    clear: both;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    height: 24px;
+    font-family: SilkscreenNormal, sans-serif;
+  }
+
+  .account-dropdown-item:hover {
+    background-color: #e9ecef;
+    color: #0a58ca;
+    text-decoration: none;
+  }
+
+  .create {
+    bottom: 92px
+  }
+
+  .sort {
+    bottom: 65px
+  }

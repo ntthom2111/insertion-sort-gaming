@@ -10,13 +10,16 @@
     <link rel="stylesheet" href="play.css">
     <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon">
 
+  <style>
  
- <script>
+  </style>
+<script>
+
     <!--
     var bar;
     var current;
     var pen = 2;
-    var colour = new Array("#777777", "#37143F");
+    var colour = new Array("#777777", "#480064");
     var yes = new Array("Vâng", "Quá hay", "Đúng rồi", "Nước đi chuẩn đấy");
     var no = new Array("Rất tiếc", "Ôi không", "Thật không may");
     var choice_text = new Array();
@@ -43,6 +46,8 @@ var bookData = [
   { number: 130, imagePath: "../assets/9.png" },
   { number: 135, imagePath: "../assets/10.png"  }
 ];
+
+
 
 // Hàm để tạo hoán vị ngẫu nhiên của mảng
 function shuffleArray(array) {
@@ -175,7 +180,7 @@ function checkOrder() {
     if (penalty > 0) {
       text += " Có " + penalty + " giây bị phạt cho những lựa chọn sai, tổng cộng là " + (final_taken + penalty) + " giây.";
     }
-  text += '<br><img src="/assets/replay.png" id="replayButton" style="cursor: pointer; margin-top: 5px; scale: 0.4" onclick="init()">';
+    text += '<br><img src="/assets/replay.png" id="replayButton" style="cursor: pointer; margin-top: 5px; scale: 0.5" onclick="init()">';
     document.getElementById("commentary").innerHTML = text;
     return; // Trò chơi đã kết thúc, không cần kiểm tra thêm
   } else if (game_over) {
@@ -265,14 +270,10 @@ function checkOrder() {
         <div class="bar"></div>
         <div class="bar"></div>
       </div>
-      <div id="imageContainer">
-  <img src="/assets/guide.png" alt="Hướng dẫn">  
-</div>
-
       <div id="controls">
         <p>Bạn muốn thực hiện hành động gì với cuốn sách được chọn? <br> Bạn có thể nhấn <em>L</em> hoặc <em>S</em> trên bàn phím hoặc dùng
         các nút bấm để thể hiện sự lựa chọn.<br><br>
-        <!-- <img src="/assets/guide_ico.png" input type="button" value="Hướng dẫn" onclick="openImageWindow('/assets/guide.png')"> -->
+        
           <img src="/assets/mix.png" input type="button" value="Xáo sách" onclick="buttonClickSound(); init()">
           <img src="/assets/left.png" input type="button" value="Qua trái" onclick="buttonClickSound(); left()"> &emsp;
           <img src="/assets/stop.png" input type="button" value="Đứng yên" onclick="buttonClickSound(); stick()">
@@ -284,8 +285,6 @@ function checkOrder() {
             var audio = new Audio('/music/click.mp3');
             audio.play();
           }
-
-
         </script>
         
         <p id="commentary"></p>
@@ -294,24 +293,19 @@ function checkOrder() {
     </div>
   </main>
 
-  <a href="#" class="guide-button" onmouseenter="zoomInImage()" onmouseleave="zoomOutImage()">
-    <img src="/assets/guidebtn.png" input type="button" alt="Hướng dẫn">
-</a>
-
-    <div class="learn">
+  <a href="#" class="guide-button">
+                    <img src="../assets/guidebtn.png" alt="Guide">
+                </a>
+    <div class="play">
         <div id="sort-view">
             <ul></ul>
         </div>
+        
     <script>
-  function zoomInImage() {
-    document.getElementById('imageContainer').style.width = '1500px'; // Thay đổi kích thước khi rê vào
-  }
-
-  function zoomOutImage() {
-    document.getElementById('imageContainer').style.width = '100px'; // Thay đổi kích thước khi rê ra
-  }
-</script>
-
+        document.querySelector(".guide-button").addEventListener("click", function() {
+      window.openImageWindow('/assets/guide.png');
+    });
+     </script>
 
    <a href="#" class="back-button">
                     <img src="../assets/main.png" alt="Back">
@@ -326,22 +320,13 @@ function checkOrder() {
       window.history.back();
     });
      </script>
-    
-    <script>
-        document.querySelector(".back-button").addEventListener("click", function() {
-      window.history.back();
-    });
-     </script>
 
 
     </section>
 <audio controls loop src="/music/play.mp3" autoplay="true" style="display: none; volume:  0.01 "></audio>
+
+
+
 </body>
 
 </html>
-
-
-
-
-
- 
