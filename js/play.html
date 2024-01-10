@@ -17,7 +17,7 @@
     var bar;
     var current;
     var pen = 2;
-    var colour = new Array("#777777", "#37143F");
+    var colour = new Array("#777777", "#e600ff");
     var yes = new Array("Vâng", "Quá hay", "Đúng rồi", "Nước đi chuẩn đấy");
     var no = new Array("Rất tiếc", "Ôi không", "Thật không may");
     var choice_text = new Array();
@@ -234,7 +234,7 @@ function checkOrder() {
   </script>
 </head>
 
-<body onload="init()" style="overflow: hidden;">
+<body onload="init()" style="overflow: hidden; width= 1468; hight:758">
   <p id="time"></p>
   <script type="application/ld+json">
     {
@@ -282,7 +282,7 @@ function checkOrder() {
         
         <script>
           function buttonClickSound() {
-            var audio = new Audio('/music/click.mp3');
+            var audio = new Audio('../assets/music/click.mp3');
             audio.play();
           }
 
@@ -305,7 +305,7 @@ function checkOrder() {
         </div>
     <script>
   function zoomInImage() {
-    document.getElementById('imageContainer').style.width = '1200px'; // Thay đổi kích thước khi rê vào
+    document.getElementById('imageContainer').style.width = '1400px'; // Thay đổi kích thước khi rê vào
   }
 
   function zoomOutImage() {
@@ -333,7 +333,7 @@ function checkOrder() {
 
 
     </section>
-<audio controls loop src="/music/play.mp3" autoplay="true" style="display: none; volume:  0.01 "></audio>
+<audio controls loop src="../assets/music/play.mp3" autoplay="true" style="display: none; volume:  0.01 "></audio>
 </body>
 
 </html>

@@ -17,7 +17,7 @@
 <div>
  
  <div id="banner">
-       <img src="/assets/banner.gif"   width="1460" alt="banner">
+       <img src="/assets/banner.gif"   width="1450" alt="banner">
 
  </div>
 
@@ -26,7 +26,7 @@
 
 <h2>1. GIỚI THIỆU</h2>
 <p>Thuật toán sắp xếp  là một thuật toán sắp xếp các phần tử của một danh sách (hoặc một mảng) theo thứ tự (tăng hoặc giảm). Và để dễ dàng cho việc nghiên cứu và học tập thì người ta thường gán các phần tử được sắp xếp là các chữ số.</p>
-<p>Sắp xếp chèn (insertion sort) là thuật toán sắp xếp cho một dãy đã có thứ tự. Ta chia dãy thành dãy đã sắp xếp và dãy chưa sắp xếp. Chèn thêm một phần tử c từ dãy chưa sắp xếp vào vị trí thích hợp của dãy số đã sắp xếp sao cho dãy số vẫn là dãy sắp xếp có thứ tự. Sau đó ta lặp lại các thao tác cho đến khi dãy chưa sắp xếp không còn phần tử nào nữa.</p>
+<p>Sắp xếp chèn (insertion sort) là thuật toán sắp xếp cho một dãy đã có thứ tự. Ta chia dãy thành dãy đã sắp xếp và dãy chưa sắp xếp. Chèn thêm một phần tử "c" từ dãy chưa sắp xếp vào vị trí thích hợp của dãy số đã sắp xếp sao cho dãy số vẫn là dãy sắp xếp có thứ tự. Sau đó ta lặp lại các thao tác cho đến khi dãy chưa sắp xếp không còn phần tử nào nữa.</p>
 <p>Thuật toán sắp xếp chèn sẽ lần lượt chọn giá trị của các phần tử trong mảng (từ giá trị thứ 2 đến giá trị cuối cùng) và so sánh với với các giá trị phía trước vị trí của nó</p>
 <p>Nếu tìm được vị trí phù hợp, phần tử ấy sẽ được chèn vào vị trí thích hợp giữa các giá trị trước nhưng vẫn đảm bảo mảng được sắp xếp theo thứ tự.</p>
 
@@ -46,12 +46,12 @@
 
 <h2>2.Ý TƯỞNG THUẬT TOÁN SẮP XẾP CHÈN -  INSERTION SORT</h2>
 
-<p>Thuật toán Insertion Sort (Sắp xếp chèn) là một thuật toán sắp xếp đơn giản.</p>
 <p>Thuật toán sắp xếp chèn thực hiện sắp xếp dãy số theo cách duyệt từng phần tử và chèn từng phần tử đó vào đúng vị trí trong mảng con(dãy số từ đầu đến phần tử phía trước nó) đã sắp xếp sao cho dãy số trong mảng sắp đã xếp đó vẫn đảm bảo tính chất của một dãy số tăng dần.:</p>
 <ul>
-<li>Khởi tạo mảng với dãy con đã sắp xếp có k = 1 phần tử(phần tử đầu tiên, phần tử có chỉ số 0) </li>
-<li>Duyệt từng phần tử từ phần tử thứ 2, tại mỗi lần duyệt phần tử ở chỉ số i thì đặt phần tử đó vào một vị trí nào đó trong đoạn từ [0…i] sao cho dãy số từ [0…i] vẫn đảm bảo tính chất dãy số tăng dần. Sau mỗi lần duyệt, số phần tử đã được sắp xếp k trong mảng tăng thêm 1 phần tử.</li>
-<li>Lặp cho tới khi duyệt hết tất cả các phần tử của mảng.</li>
+<li>Bắt đầu từ phần tử thứ hai trong dãy, so sánh phần tử đó với các phần tử đã được sắp xếp trước đó.</li>
+<li>Nếu phần tử đó nhỏ hơn hoặc bằng một phần tử đã được sắp xếp, thì chèn phần tử đó vào vị trí thích hợp trong dãy đã được sắp xếp.</li>
+<li>Nếu phần tử đó lớn hơn tất cả các phần tử đã được sắp xếp, thì chèn phần tử đó vào cuối dãy.</li>
+<li>Tiếp tục các bước trên cho đến khi tất cả các phần tử trong dãy đều được sắp xếp.  </li>
 </ul>
 
 <img src="/assets/vd.gif"  width="720" alt="vd">
@@ -71,7 +71,8 @@
 <li>Thực hiện so sánh từ trái sang phải (thứ tự các lá bài đang tăng dần), đến khi gặp lá bài có giá trị lớn hơn lá bài mới chúng ta sẽ dừng lại và chèn lá bài mới vào vị trí bên trái của lá bài có giá trị lớn hơn nó.</li>
 <li>Thực hiện so sánh từ phải sang trái (thứ tự các lá bài đang giảm dần), đến khi gặp lá bài có giá trị nhỏ hơn lá bài mới chúng ta sẽ dừng lại và chèn lá bài mới vào vị trí bên phải của lá bài có giá trị nhỏ hơn nó.</li>
 </ul>
-<iframe width="1135" height="626" src="https://www.youtube.com/embed/IWT-Uoz_Sb8" title="Insertion Sort Algorithm | Thuật toán sắp xếp chèn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="624" height="675" src="https://www.youtube.com/embed/bykvq8Uwv1g" title="Insertion sort🃏 | Log2Base2®" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 <h6>Video hướng dẫn chi tiết </h6>
 <p>Thật bất ngờ phải không, chính trong cuộc sống hằng ngày thì rất nhiều việc chúng ta thực hiện chính là thao tác của thuật toán Insertion Sort - sắp xếp chèn. Để hiểu rõ hơn về thuật toán này, chúng ta có thể xem xét với các con số cụ thể. Giả sử chúng ta đã biết trước các quân bài bạn sẽ bốc được là dãy 4, 3, 1, 5, 7, 9, 6, 2, kí hiệu màu xanh là các quân bài đã sắp xếp xong, màu cam chỉ các quân bài bạn vừa bốc được và cần chèn vào các lá bài trước. Chúng ta có sơ đồ cơ bản về thuật toán trên như sau:</p>
 <img src="/assets/vd.png"  width="720" alt="vd">

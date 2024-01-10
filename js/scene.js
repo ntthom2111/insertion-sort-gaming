@@ -19,12 +19,13 @@ export default class Mainscene extends Phaser.Scene{
       this.load.image('g9' ,'../assets/g9.png');
       this.load.image('next' ,'../assets/next.png');
       this.load.image('nextg' ,'../assets/nextg.png');
-      this.load.audio('Click', '../music/click.mp3');
-      this.load.audio('game', '../music/game.mp3');
+      this.load.audio('Click', '../assets/music/click.mp3');
+      this.load.audio('game', '../assets/music/game.mp3');
   }
   create(){
      const Theme = this.add.image(1468/2, 768/2, 'theme')
-     this.sound.play('game', { volume:  0.2 });
+     this.sound.play('game', { volume:  0.1
+     });
 
       const playbtn = this.add.sprite(2400/2, 1100/2, 'play')
       playbtn.setInteractive();
