@@ -9,10 +9,16 @@ export default class Scencegame extends Phaser.Scene{
         
     }
     create(){
-    
-        this.add.image(1468/2, 768/2,  'bg')
-     
-    }
+		const config = {
+			type: Phaser.AUTO,
+			width: window.innerWidth,
+			height: window.innerHeight,
+			scale: {
+				mode: Phaser.Scale.RESIZE,
+				autoCenter: Phaser.Scale.CENTER
+	},	
+     screen: this
+    };
     update(){
 
     }
