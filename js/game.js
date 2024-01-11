@@ -11,7 +11,7 @@ const config = {
     mode: Phaser.Scale.RESIZE,
     autoCenter: Phaser.Scale.CENTER
 },	
- screen: [Mainscene],
+ screen: this,
 }
 
   
@@ -19,4 +19,4 @@ const config = {
 
 
 
-
+var game = new Phaser.Game(config)
