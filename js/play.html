@@ -176,7 +176,7 @@ function checkOrder() {
     if (penalty > 0) {
       text += " Có " + penalty + " giây bị phạt cho những lựa chọn sai, tổng cộng là " + (final_taken + penalty) + " giây.";
     }
-  text += '<br><img src="/assets/replay.png" id="replayButton" style="cursor: pointer; margin-top: 5px; scale: 0.4" onclick="init()">';
+  text += '<img src="/assets/replay.png" id="replayButton" style="cursor: pointer; margin-top: 0px; scale: 0.4" onclick="init()">';
     document.getElementById("commentary").innerHTML = text;
     return; // Trò chơi đã kết thúc, không cần kiểm tra thêm
   } else if (game_over) {
@@ -274,10 +274,10 @@ function checkOrder() {
         <p>Bạn muốn thực hiện hành động gì với cuốn sách được chọn? <br> Bạn có thể nhấn <em>L</em> hoặc <em>S</em> trên bàn phím hoặc dùng
         các nút bấm để thể hiện sự lựa chọn.<br><br>
         <!-- <img src="/assets/guide_ico.png" input type="button" value="Hướng dẫn" onclick="openImageWindow('/assets/guide.png')"> -->
-          <img src="/assets/mix.png" input type="button" value="Xáo sách" onclick="buttonClickSound(); init()">
-          <img src="/assets/left.png" input type="button" value="Qua trái" onclick="buttonClickSound(); left()"> &emsp;
-          <img src="/assets/stop.png" input type="button" value="Đứng yên" onclick="buttonClickSound(); stick()">
-          <img src="/assets/check.png" input type="button" value="Kiểm tra đúng/sai" onclick="buttonClickSound(); checkOrder()">
+          <img src="/assets/mix.png" input type="button" value="Xáo sách" style="scale: 0.8" onclick="buttonClickSound(); init()">
+          <img src="/assets/left.png" input type="button" value="Qua trái" style="scale: 0.8" onclick="buttonClickSound(); left()"> &emsp;
+          <img src="/assets/stop.png" input type="button" value="Đứng yên" style="scale: 0.8"onclick="buttonClickSound(); stick()">
+          <img src="/assets/check.png" input type="button" value="Kiểm tra đúng/sai" style="scale: 0.8" onclick="buttonClickSound(); checkOrder()">
         </p>
         
         <script>

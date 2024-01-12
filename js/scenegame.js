@@ -10,7 +10,7 @@ export default class Scencegame extends Phaser.Scene{
     }
     create(){
     
-        this.add.image(1468/2, 768/2,  'bg')
+        this.add.image(1468/2, 768/2,  'b')
      
     }
     update(){
