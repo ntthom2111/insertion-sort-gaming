@@ -24,7 +24,7 @@ export default class Mainscene extends Phaser.Scene{
   }
   create(){
      const Theme = this.add.image(1518/2, 668/2, 'theme')
-     Theme.setScale(0.5)
+     Theme.setScale(0.65)
      this.sound.play('game', { volume:  0.1
       
      });
