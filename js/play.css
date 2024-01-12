@@ -108,6 +108,8 @@
  
     background-image: url("/assets/bg.png");
     background-repeat: no-repeat;
+	max-width: 100%;
+    height: auto;
   }
 
   img:hover {
