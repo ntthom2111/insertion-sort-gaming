@@ -82,9 +82,9 @@
   }
 
   #commentary {
-    height: 40px;
-    vertical-align: middle;
-    width: auto;
+    height: auto; /* Đặt chiều cao tự động để nó có thể thay đổi theo nội dung */
+    max-width: 600px; /* Đặt chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa bằng cách sử dụng margin và giá trị 'auto' */
     text-align: center;
   }
   #time {
@@ -111,25 +111,23 @@
     background-size: cover;
   }
 
-  img:hover {
-    transform: scale(0.9); /* Phóng to 110% khi hover */
-    transition: transform 0.3s ease-in-out; /* Thêm hiệu ứng chuyển động */
-  }
-
+ /* Thêm responsive design cho #imageContainer */
 #imageContainer {
   position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 0px; /* Kích thước ban đầu của container */
+  top: 0;
+  left: 0;
+  width: 0; /* Kích thước ban đầu của container */
   overflow: hidden;
   transition: width 0.3s ease-in-out;
-}
-
-#imageContainer:hover {
-  width: 900px; /* Kích thước khi rê chuột vào */
 }
 
 #imageContainer img {
   width: 100%;
   height: auto;
+}
+
+/* Thêm responsive design cho hình ảnh khi hover */
+img:hover {
+  transform: scale(0.9); /* Phóng to 110% khi hover */
+  transition: transform 0.3s ease-in-out; /* Thêm hiệu ứng chuyển động */
 }
