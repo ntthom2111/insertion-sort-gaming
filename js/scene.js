@@ -37,7 +37,7 @@ export default class Mainscene extends Phaser.Scene{
          const g1  = this.add.image(1518/2, 668/2, 'g1')
 		 g1.setScale(1.05)
          {
-          const nextg = this.add.sprite(2600/2, 960/2, 'nextg')
+          const nextg = this.add.sprite(2650/2, 960/2, 'nextg')
           nextg.setScale(0.7);
           nextg.setInteractive();
           this.sound.play('Click', { volume:  3.5  });
@@ -47,7 +47,7 @@ export default class Mainscene extends Phaser.Scene{
            // this.scene.start("Playscene");
           })
           {
-            const next = this.add.sprite(2630/2, 1350/2, 'next')
+            const next = this.add.sprite(2680/2, 1450/2, 'next')
             
             next  .setInteractive();
             this.sound.play('Click', { volume: 3.5  });
