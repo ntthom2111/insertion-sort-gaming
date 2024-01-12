@@ -176,7 +176,7 @@ function checkOrder() {
     if (penalty > 0) {
       text += " Có " + penalty + " giây bị phạt cho những lựa chọn sai, tổng cộng là " + (final_taken + penalty) + " giây.";
     }
-  text += '<br><img src="/assets/replay.png" id="replayButton" style="cursor: pointer; margin-top: 5px; scale: 0.4" onclick="init()">';
+  text += '<img src="/assets/replay.png" id="replayButton" style="cursor: pointer; margin-top: 5px; scale: 0.4" onclick="init()">';
     document.getElementById("commentary").innerHTML = text;
     return; // Trò chơi đã kết thúc, không cần kiểm tra thêm
   } else if (game_over) {
