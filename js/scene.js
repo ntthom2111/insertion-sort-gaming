@@ -53,9 +53,10 @@ export default class Mainscene extends Phaser.Scene{
             this.sound.play('Click', { volume: 3.5  });
             next  .on('pointerdown',()=>{
           console.log('Nhấn nút play')
-          const g2  = this.add.image(1468/2, 768/2, 'g2')
+          const g2  = this.add.image(1518/2, 668/2, 'g2')
+		   g2.setScale(1)
           {
-            const nextg = this.add.sprite(2600/2, 960/2, 'nextg')
+            const nextg = this.add.sprite(2650/2, 860/2, 'nextg')
           nextg.setScale(0.7);
           nextg.setInteractive();
           this.sound.play('Click', { volume:  3.5  });
@@ -65,15 +66,16 @@ export default class Mainscene extends Phaser.Scene{
             //this.scene.start("Playscene");
           })
           {
-            const next = this.add.sprite(2630/2, 1350/2, 'next')
+            const next = this.add.sprite(2680/2, 1250/2,  'next')
             
             next  .setInteractive();
             this.sound.play('Click', { volume: 3.5  });
             next  .on('pointerdown',()=>{
           console.log('Nhấn nút play')
-          const g3  = this.add.image(1468/2, 768/2, 'g3')
+          const g3  = this.add.image(1518/2, 668/2, 'g3')
+		   g3.setScale(1)
           {
-            const nextg = this.add.sprite(2600/2, 960/2, 'nextg')
+            const nextg = this.add.sprite(2650/2, 860/2, 'nextg')
           nextg.setScale(0.7);
           nextg.setInteractive();
           this.sound.play('Click', { volume:  3.5  });
@@ -83,16 +85,17 @@ export default class Mainscene extends Phaser.Scene{
             //this.scene.start("Playscene");
           })
           {
-            const next = this.add.sprite(2630/2, 1350/2, 'next')
+            const next = this.add.sprite(2680/2, 1250/2,  'next')
             
             next  .setInteractive();
             this.sound.play('Click', { volume: 3.5  });
             next  .on('pointerdown',()=>{
           console.log('Nhấn nút play')
-          const g4  = this.add.image(1468/2, 768/2, 'g4')
+          const g4  = this.add.image(1518/2, 668/2, 'g4')
+		   g4.setScale(1)
           {
             {
-              const nextg = this.add.sprite(2600/2, 1150/2, 'nextg')
+              const nextg = this.add.sprite(2650/2, 860/2,, 'nextg')
             nextg.setScale(0.7);
             nextg.setInteractive();
             this.sound.play('Click', { volume:  3.5  });
@@ -102,16 +105,17 @@ export default class Mainscene extends Phaser.Scene{
               //this.scene.start("Playscene");
             })
             {
-              const next = this.add.sprite(2630/2, 1400/2, 'next')
+              const next = this.add.sprite(2680/2, 1250/2,  'next')
               
               next  .setInteractive();
               this.sound.play('Click', { volume: 3.5  });
               next  .on('pointerdown',()=>{
             console.log('Nhấn nút play')
-            const g5  = this.add.image(1468/2, 768/2, 'g5')
+            const g5  = this.add.image(1518/2, 668/2, 'g5')
+			 g5.setScale(1)
             {
               
-                const nextg = this.add.sprite(2600/2, 960/2, 'nextg')
+                const nextg = this.add.sprite(2650/2, 860/2, 'nextg')
               nextg.setScale(0.7);
               nextg.setInteractive();
               this.sound.play('Click', { volume:  3.5  });
@@ -121,16 +125,17 @@ export default class Mainscene extends Phaser.Scene{
                 //this.scene.start("Playscene");
               })
               {
-                const next = this.add.sprite(2630/2, 1350/2, 'next')
+                const next = this.add.sprite(2680/2, 1250/2,  'next')
                 
                 next  .setInteractive();
                 this.sound.play('Click', { volume: 3.5  });
                 next  .on('pointerdown',()=>{
               console.log('Nhấn nút play')
-              const g6  = this.add.image(1468/2, 768/2, 'g6')
+              const g6  = this.add.image(1518/2, 668/2, 'g6')
+			   g6.setScale(1)
               {
                 {
-                  const nextg = this.add.sprite(2600/2, 960/2, 'nextg')
+                  const nextg = this.add.sprite(2650/2, 860/2, 'nextg')
                 nextg.setScale(0.7);
                 nextg.setInteractive();
                 this.sound.play('Click', { volume:  3.5  });
@@ -140,16 +145,17 @@ export default class Mainscene extends Phaser.Scene{
                   //this.scene.start("Playscene");
                 })
                 {
-                  const nextg = this.add.sprite(2630/2, 1350/2, 'next')
+                  const nextg = this.add.sprite(2680/2, 1250/2,  'next')
                
                 nextg.setInteractive();
                 this.sound.play('Click', { volume:  3.5  });
                 nextg  .on('pointerdown',()=>{
                  console.log('Nhấn nút play')
-                 const g9  = this.add.image(1468/2, 768/2, 'g9')
+                 const g9  = this.add.image(1518/2, 668/2, 'g9')
+				  g9.setScale(1)
                   //this.scene.start("Playscene");
                   {
-                      const nextg = this.add.sprite(2400/2, 1350/2, 'nextg')
+                      const nextg = this.add.sprite(2450/2, 1250/2, 'nextg')
               nextg.setScale(0.7);
               nextg.setInteractive();
               this.sound.play('Click', { volume:  3.5  });
