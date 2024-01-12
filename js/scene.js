@@ -35,7 +35,7 @@ export default class Mainscene extends Phaser.Scene{
       playbtn.on('pointerdown',()=>{
           console.log('Nhấn nút play')
          const g1  = this.add.image(1518/2, 668/2, 'g1')
-		 g1.setScale(0.1)
+		 g1.setScale(1)
          {
           const nextg = this.add.sprite(2650/2, 860/2, 'nextg')
           nextg.setScale(0.7);
