@@ -23,7 +23,7 @@ export default class Mainscene extends Phaser.Scene{
       this.load.audio('game', '../assets/music/game.mp3');
   }
   create(){
-     const Theme = this.add.image(1500/2, 798/2, 'theme')
+     const Theme = this.add.image(1300/2, 798/2, 'theme')
      Theme.setScale(0.95)
      this.sound.play('game', { volume:  0.1
       
