@@ -5,8 +5,8 @@ import Mainscene from "./scene.js"
 
 const config ={
     type: Phaser.AUTO,
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: 1468,
+    height: 768,
     scale: {
       mode: Phaser.Scale.RESIZE,
       autoCenter: Phaser.Scale.CENTER},
