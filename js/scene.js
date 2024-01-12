@@ -34,7 +34,8 @@ export default class Mainscene extends Phaser.Scene{
       this.sound.play('Click', { volume:   3.5 });
       playbtn.on('pointerdown',()=>{
           console.log('Nhấn nút play')
-         const g1  = this.add.image(1468/2, 768/2, 'g1')
+         const g1  = this.add.image(1518/2, 668/2, 'g1')
+		 g1.setScale(0.6)
          {
           const nextg = this.add.sprite(2600/2, 960/2, 'nextg')
           nextg.setScale(0.7);
