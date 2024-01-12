@@ -34,7 +34,7 @@
     width: 90%;
     max-width: 70%;
     
-    height: 350px;
+    height: 370px;
     position: relative;
     display: inline-block;
     vertical-align: middle;
@@ -48,7 +48,7 @@
     
    color: #777777;
     position: absolute;
-    bottom: 5px;
+    bottom: 0px;
     display: flex;
     align-items: none;
     justify-content: center;
